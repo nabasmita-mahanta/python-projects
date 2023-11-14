@@ -1,6 +1,6 @@
 # Student details Project
 # CRUD Operations - create, read, update, delete
-
+import os
 # create the file
 file = open('student_details.txt', 'a')
 prompt = ("\nWelcome to SMS - Student Management System."
@@ -54,7 +54,7 @@ while True:
 
 
     elif user_input == '3':
-        print("\nSearching for a student record")
+        print("\nSearching for a student record by name")
         search_string = input("\nPlease enter the student name: ")
 
         file = open('student_details.txt', 'r')
@@ -74,3 +74,54 @@ while True:
                 print("\n Student fees : ", my_list[3])
                 print("\n Student percentage : ", my_list[4])
                 break
+        file.close()
+
+
+    elif user_input == '4':
+        print("\nSearching for a student record by rollno")
+        search_string = input("Please enter the student roll no: ")
+
+        file = open('student_details.txt', 'r')
+        while True:
+            line_content = file.readline()
+            length = len(line_content)
+            if length == 0:
+                print("Record not found")
+                break
+
+            my_list = line_content.split("~~~")
+            if my_list[1] == search_string:
+                print("\nRecord found")
+                print("\n Student name : ", my_list[0])
+                print("\n Student rollno : ", my_list[1])
+                print("\n Student class : ", my_list[2])
+                print("\n Student fees : ", my_list[3])
+                print("\n Student percentage : ", my_list[4])
+                break
+
+        file.close()
+
+    elif user_input == '5':
+        print("\nDeleting a student details by name")
+        search_string = input("Please enter the student name: ")
+
+        file = open('student_details.txt', 'r')
+        temp_file = open('temp_file.txt', 'w')
+        while True:
+            line_content = file.readline()
+            if len(line_content) == 0:
+                break
+
+            name = line_content.split("~~~")[0]
+            if name == search_string:
+                pass
+            else:
+                temp_file.write(line_content)
+
+        file.close()
+        temp_file.close()
+
+        os.remove('student_details.txt')
+        os.rename('temp_file.txt','student_details.txt')
+
+
