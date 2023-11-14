@@ -36,7 +36,7 @@ while True:
         print('Student Percentage : ', percentage)
 
         file = open('student_details.txt', 'a')
-        file.write(name+'~~~'+roll_no+'~~~'+student_class+'~~~'+fees+'~~~'+percentage)
+        file.write(name + '~~~' + roll_no + '~~~' + student_class + '~~~' + fees + '~~~' + percentage + '\n')
         file.close()
 
     elif user_input == '2':
@@ -44,6 +44,33 @@ while True:
         print("\nNAME~~~RollNo~~~Class~~~Fees~~~Percentage\n")
 
         file = open('student_details.txt', 'r')
-        file_content = file.read()
+        while True:
+            line_content = file.readline()
+            length = len(line_content)
+            if length == 0:
+                break
+            print(line_content.strip())
         file.close()
-        print(file_content)
+
+
+    elif user_input == '3':
+        print("\nSearching for a student record")
+        search_string = input("\nPlease enter the student name: ")
+
+        file = open('student_details.txt', 'r')
+        while True:
+            line_content = file.readline()
+            length = len(line_content)
+            if length == 0:
+                print("Record not found")
+                break
+
+            my_list = line_content.split("~~~")
+            if my_list[0] == search_string:
+                print("\nRecord found")
+                print("\n Student name : ", my_list[0])
+                print("\n Student rollno : ", my_list[1])
+                print("\n Student class : ", my_list[2])
+                print("\n Student fees : ", my_list[3])
+                print("\n Student percentage : ", my_list[4])
+                break
