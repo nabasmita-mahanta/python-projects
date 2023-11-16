@@ -105,6 +105,7 @@ while True:
 
         file = open('student_details.txt', 'r')
         temp_file = open('temp_file.txt', 'w')
+        student_exist =  False
         while True:
             line_content = file.readline()
             if len(line_content) == 0:
@@ -112,12 +113,17 @@ while True:
 
             name = line_content.split("~~~")[0]
             if name == search_string:
+                student_exist = True
                 pass
             else:
                 temp_file.write(line_content)
 
         file.close()
         temp_file.close()
+        if student_exist:
+            print("Student Found. Delete Successful")
+        else:
+            print("Student not found. Delete Unsuccessful")
 
         os.remove('student_details.txt')
         os.rename('temp_file.txt','student_details.txt')
