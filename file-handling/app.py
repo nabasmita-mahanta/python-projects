@@ -10,7 +10,7 @@ prompt = ("\nWelcome to SMS - Student Management System."
           "\n3 - Search student record by name (Read)"
           "\n4 - Search student record by roll no (Read)"
           "\n5 - Delete student record by name (Delete)"
-          "\n6 - Update student record (Update)"
+          "\n6 - Update student record by name (Update)"
           "\n7 - Exit")
 
 while True:
@@ -52,7 +52,6 @@ while True:
             print(line_content.strip())
         file.close()
 
-
     elif user_input == '3':
         print("\nSearching for a student record by name")
         search_string = input("\nPlease enter the student name: ")
@@ -75,7 +74,6 @@ while True:
                 print("\n Student percentage : ", my_list[4])
                 break
         file.close()
-
 
     elif user_input == '4':
         print("\nSearching for a student record by rollno")
@@ -124,4 +122,41 @@ while True:
         os.remove('student_details.txt')
         os.rename('temp_file.txt','student_details.txt')
 
+    elif user_input == '6':
+        print("\nUpdating a student details by name")
+        search_string = input("Please enter the student name: ")
 
+        file = open('student_details.txt', 'r')
+        temp_file = open('temp_file.txt', 'w')
+        while True:
+            line_content = file.readline()
+            if len(line_content) == 0:
+                break
+
+            name = line_content.split("~~~")[0]
+            if name == search_string:
+                print("\nEnter new student details")
+                name = input('\nEnter new student name: ')
+                roll_no = input('\nEnter new student roll no: ')
+                student_class = input('\nEnter new student class: ')
+                fees = input('\nEnter new student fees: ')
+                percentage = input('\nEnter new student percentage: ')
+
+                print("You have updated the following student details ...")
+                print('Student Name : ', name)
+                print('Student Roll No : ', roll_no)
+                print('Student Class : ', student_class)
+                print('Student Fees : ', fees)
+                print('Student Percentage : ', percentage)
+
+                temp_file.write(name + '~~~' + roll_no + '~~~' + student_class + '~~~' + fees + '~~~' + percentage + '\n')
+                print("Student details updated")
+                break
+            else:
+                temp_file.write(line_content)
+
+        file.close()
+        temp_file.close()
+
+        os.remove('student_details.txt')
+        os.rename('temp_file.txt','student_details.txt')
