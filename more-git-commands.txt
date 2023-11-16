@@ -1,0 +1,7 @@
+git clone https://github.com/nabasmita-mahanta/python-projects.git
+
+git status
+
+git branch comments
+
+git checkout comments
