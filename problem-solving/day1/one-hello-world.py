@@ -1,5 +1,5 @@
 # Write a python program to print hello world to the console
-
+print('hello world')
 
 
 
