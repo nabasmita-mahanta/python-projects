@@ -8,6 +8,9 @@ name = input("Please enter your name: ")
 age = input("Please enter your age: ")
 
 
+# print(name)
+# print(age)
+
 def greet_user(nm, ag):
     print("Hello " + nm + ", " + "you are " + ag + " years old")
 
@@ -33,4 +36,4 @@ def is_eligible_to_vote(nm, ag):
         print("Hello " + nm + ", " + "you are " + str(ag) + " years old, and not eligible to vote")
 
 
-is_eligible_to_vote(name, age)
+is_eligible_to_vote(new_name, new_age)
