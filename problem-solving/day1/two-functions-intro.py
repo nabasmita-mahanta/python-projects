@@ -45,6 +45,9 @@ print(user_input("my name is nabasmita"))
 
 # Write a python function that asks the user for his name and then prints the name
 
-x = input("Enter your name: ")
-print(x)
+def print_name():
+    name = input("Please enter your name: ")
+    print(name)
 
+
+print_name()
