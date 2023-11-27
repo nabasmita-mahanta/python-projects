@@ -4,38 +4,15 @@
 # like -> Hello Max, you are 30 years old
 
 
+name = input("Please enter your name: ")
+age = input("Please enter your age: ")
 
 
-# print(name)
-# print(age)
-
-def greetUser():
-    name = input("Please enter your name: ")
-    age = input("Please enter your age: ")
-    print("Hello " + name + ", " + "you are " + age + " years old")
+def greet_user(nm, ag):
+    print("Hello " + nm + ", " + "you are " + ag + " years old")
 
 
-greetUser()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+greet_user(name, age)
 
 # Write a python program that asks the user for name and age
 # After that write a function named "is_eligible_to_vote"
@@ -45,16 +22,15 @@ greetUser()
 # Hello Max, you are 14 years old, and NOT eligible to vote
 # All people of 18 and above are eligible to vote
 
+new_name = input("Please enter your name: ")
+new_age = input("Please enter your age: ")
 
 
-
-def is_eligible_to_vote():
-    new_name = input("Please enter your name: ")
-    new_age = input("Please enter your age: ")
+def is_eligible_to_vote(nm, ag):
     if int(new_age) >= int(18):
-        print("Hello " + new_name + ", " + "you are " + str(new_age) + " years old, and eligible to vote")
+        print("Hello " + nm + ", " + "you are " + str(ag) + " years old, and eligible to vote")
     else:
-        print("Hello " + new_name + ", " + "you are " + str(new_age) + " years old, and not eligible to vote")
+        print("Hello " + nm + ", " + "you are " + str(ag) + " years old, and not eligible to vote")
 
 
-is_eligible_to_vote()
+is_eligible_to_vote(name, age)
