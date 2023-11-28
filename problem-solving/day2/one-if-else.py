@@ -58,5 +58,5 @@ def highest_num(x, y, z):
     else:
         return z
 
-
-print(highest_num(2, 10, 7))
+# TODO :: whhat if 2 numbers are equal - highest_num(20, 20, 70)
+print(highest_num(21, 20, 70))

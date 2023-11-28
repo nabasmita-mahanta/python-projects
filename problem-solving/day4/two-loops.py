@@ -54,4 +54,4 @@
 
 # Write a function 'sum_of_digits' that takes a number
 # and returns the sum of the digits of that number
-# eg highest_num(647) -> 6+4+7 = 17 -> print 17
+# eg sum_of_digits(647) -> 6+4+7 = 17 -> print 17
