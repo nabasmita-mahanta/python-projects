@@ -52,3 +52,21 @@ def even_numbers():
 
 
 even_numbers()
+
+
+# Write a function 'digits' that takes a number
+# and prints digits of that number
+# eg digits(6475)
+
+# OUTPUT
+# 6
+# 4
+# 7
+# 5
+
+def digits(number):
+    for dig in number:
+        print(dig)
+
+
+digits(str(7890))

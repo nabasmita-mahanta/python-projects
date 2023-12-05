@@ -8,13 +8,20 @@
 # 7
 # 5
 
+# def digits():
+#     number = input("Please enter some digits: ")
+#     for digit in number:
+#         print(digit)
+#
+#
+# digits()
+
+def digits(number):
+    for dig in number:
+        print(dig)
 
 
-
-
-
-
-
+digits(str(7890))
 
 
 # Write a function 'length_of_num' that takes a number
@@ -24,34 +31,35 @@
 # OUTPUT
 # 5
 
+def length_of_num(number):
+    print(len(number))
 
 
-
-
-
-
-
-
-
-
-
+length_of_num(str(6750))
 
 
 # Write a function 'last_digit' that takes a number
 # and returns the last digits of that number
 # eg last_digit(647) -> print 7, the last digit
 
+def last_digit(number):
+    print(number[-1])
 
 
-
-
-
-
-
-
-
+last_digit(str(647))
 
 
 # Write a function 'sum_of_digits' that takes a number
 # and returns the sum of the digits of that number
 # eg sum_of_digits(647) -> 6+4+7 = 17 -> print 17
+
+def sum_of_digits(number):
+    for num in number:
+        num1 = number[-1]
+        num2 = number[-2]
+        num3 = number[-3]
+    result = int(num1) + int(num2) + int(num3)
+    return result
+
+
+print(sum_of_digits(str(987)))
