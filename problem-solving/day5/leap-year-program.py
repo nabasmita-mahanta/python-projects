@@ -17,12 +17,14 @@ Output 2: No
 Write a program in python to check whether a given year is leap year or not
 """
 
-year = input('Enter any year: ')
+year = int(input('Enter any year: '))
 
 
 def is_leap_year(num):
-    # Complete this function
-    pass
+    if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
+        print('Yes')
+    else:
+        print('No')
 
 
-print(is_leap_year(year))
+is_leap_year(year)

@@ -17,8 +17,8 @@ temp = input('Enter temp in Celsius: ')
 
 
 def convert_to_fahrenheit(temp_in_celsius):
-    # Complete this function
-    pass
+    result = (1.8 * float(temp)) + 32
+    return result
 
 
 print(convert_to_fahrenheit(temp))

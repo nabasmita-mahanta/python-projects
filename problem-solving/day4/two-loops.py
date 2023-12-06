@@ -54,12 +54,10 @@ last_digit(str(647))
 # eg sum_of_digits(647) -> 6+4+7 = 17 -> print 17
 
 def sum_of_digits(number):
+    sum = 0
     for num in number:
-        num1 = number[-1]
-        num2 = number[-2]
-        num3 = number[-3]
-    result = int(num1) + int(num2) + int(num3)
-    return result
+        sum = sum + int(num)
+    return sum
 
 
 print(sum_of_digits(str(987)))
