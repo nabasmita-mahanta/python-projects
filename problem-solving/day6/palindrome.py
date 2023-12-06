@@ -20,8 +20,10 @@ word = input('Enter any word: ')
 
 
 def is_palindrome(string):
-    # Complete this function
-    pass
+    if word[:] == word[::-1]:
+        print("Yes")
+    else:
+        print("No")
 
 
-print(is_palindrome(word))
+is_palindrome(word)
