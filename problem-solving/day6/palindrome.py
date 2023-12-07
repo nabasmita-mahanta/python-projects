@@ -20,7 +20,7 @@ word = input('Enter any word: ')
 
 
 def is_palindrome(string):
-    if word[:] == word[::-1]:
+    if string[:] == string[::-1]:
         print("Yes")
     else:
         print("No")

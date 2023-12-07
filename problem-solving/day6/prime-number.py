@@ -30,12 +30,23 @@ But 6 is not prime (it is composite) since, 2 x 3 = 6
 Solution - https://www.programiz.com/python-programming/examples/prime-number
 """
 
-number = input('Enter a positive number: ')
+number = int(input('Enter a positive number: '))
 
 
 def is_prime(num):
-    # Complete this function
-    pass
+    if num == 1:
+        print("False")
+    elif num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                print("False")
+                break
+        else:
+            print("True")
+    else:
+        print("False")
 
 
-print(is_prime(number))
+is_prime(number)
+
+
