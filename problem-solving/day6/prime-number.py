@@ -35,18 +35,16 @@ number = int(input('Enter a positive number: '))
 
 def is_prime(num):
     if num == 1:
-        print("False")
+        return False
     elif num > 1:
-        for i in range(2, num):
+        for i in range(2, num//2):
             if (num % i) == 0:
-                print("False")
-                break
+                return False
         else:
-            print("True")
+            return True
     else:
-        print("False")
+        return False
 
 
-is_prime(number)
-
-
+res = is_prime(number)
+print(res)
