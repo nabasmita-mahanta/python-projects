@@ -3,6 +3,4 @@
 x = 2
 y = 5
 sum = x + y
-print("The sum of two number is :" , sum)
-
-
+print("The sum of two number is :", sum)
