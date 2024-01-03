@@ -5,3 +5,5 @@ git status
 git branch comments
 
 git checkout comments
+
+git merge problem-solving
