@@ -1,11 +1,8 @@
-import mysql.connector as sql
+CREATE SCHEMA `weather_app` ;
 
-connection = sql.connect(host="localhost", user="root", passwd="admin123")
-print(connection)
-my_cursor = connection.cursor()
-create_schema = '''CREATE SCHEMA `weather_app` ;'''
-create_table_query = ''' 
-CREATE TABLE IF NOT EXISTS `weather_app`.`master_data` (
+
+
+CREATE TABLE `weather_app`.`new_table` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `city_name` VARCHAR(45) NULL,
   `temp` INT NULL,
@@ -23,7 +20,3 @@ CREATE TABLE IF NOT EXISTS `weather_app`.`master_data` (
   `sunset` DATETIME NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
-'''
-# my_cursor.execute(create_schema)
-my_cursor.execute(create_table_query)
-
