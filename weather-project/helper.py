@@ -1,3 +1,6 @@
+import datetime
+
+
 def generate_insert_query(result):
     latitude = result["coord"]["lat"]
     longitude = result["coord"]["lon"]
@@ -15,9 +18,18 @@ def generate_insert_query(result):
     wind_speed = int(result["wind"]["speed"])
 
     date = result["dt"]
+    print(date)
+    print(type(date))
+    dt_1 = 1708227182
+    date_obj = datetime.datetime.fromtimestamp(date)
+    print(date_obj)
+    print(type(date_obj))
 
     country = result["sys"]["country"]
     sunrise = result["sys"]["sunrise"]
+    print(sunrise)
+    print(type(sunrise))
+
     sunset = result["sys"]["sunset"]
 
     timezone = result["timezone"]
@@ -25,5 +37,5 @@ def generate_insert_query(result):
 
     query = (
         f"INSERT INTO weather_app.master_data (city_name, temp, temp_feels_like,weather_main,weather_desc,temp_min,temp_max,pressure, humidity, wind_speed, date, country, sunrise, sunset) "
-        f"VALUES('{city_name}',{temperature},{temperature_feels_like},'{weather_main}','{weather_description}',{temperature_min},{temperature_max},{pressure},{humidity},{wind_speed},null,'{country}',null,null);")
+        f"VALUES('{city_name}',{temperature},{temperature_feels_like},'{weather_main}','{weather_description}',{temperature_min},{temperature_max},{pressure},{humidity},{wind_speed},'{date_obj}','{country}',null,null);")
     return query

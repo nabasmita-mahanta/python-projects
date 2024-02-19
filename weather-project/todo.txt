@@ -1,0 +1,14 @@
+1. Use Windows task scheduler to schedule daily run of app
+   YouTube - How to Run a Python Script with the Windows Task Scheduler - Run Scheduled Python Scripts
+   https://www.youtube.com/watch?v=4n2fC97MNac
+
+2. Use file handling concepts to write logs and results to a file (apart from inserting in DB)
+
+3. No duplicate results in the database,
+   check if a record is already present for a city for the current date,
+   if present 'Do Not insert' duplicate weather data of that city for that date
+
+4. Send email to User after Job is completed and New data is inserted for the day
+
+5. use properties file/ env variables to keep id password for the email creds,
+   also sql.connect - host, username, password keep in properties file

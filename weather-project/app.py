@@ -16,7 +16,7 @@ for city in cities:
     print(f"The insert query for {city} is {insert_query}")
     print("Making MySql connection")
     # Making MySql Connection
-    connection = sql.connect(host="localhost", user="root", passwd="admin123")
+    connection = sql.connect(host="localhost", user="root", passwd="Admin@123")
     print("MySql Connection established")
     my_cursor = connection.cursor()
     my_cursor.execute(insert_query)
