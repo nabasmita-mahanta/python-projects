@@ -26,16 +26,16 @@ def generate_insert_query(result):
     print(type(date_obj))
 
     country = result["sys"]["country"]
-    sunrise = result["sys"]["sunrise"]
-    print(sunrise)
-    print(type(sunrise))
 
+    sunrise = result["sys"]["sunrise"]
+    sunrise_datetime_obj = datetime.datetime.fromtimestamp(sunrise)
     sunset = result["sys"]["sunset"]
+    sunset_datetime_obj = datetime.datetime.fromtimestamp(sunset)
 
     timezone = result["timezone"]
     city_name = result["name"]
 
     query = (
         f"INSERT INTO weather_app.master_data (city_name, temp, temp_feels_like,weather_main,weather_desc,temp_min,temp_max,pressure, humidity, wind_speed, date, country, sunrise, sunset) "
-        f"VALUES('{city_name}',{temperature},{temperature_feels_like},'{weather_main}','{weather_description}',{temperature_min},{temperature_max},{pressure},{humidity},{wind_speed},'{date_obj}','{country}',null,null);")
+        f"VALUES('{city_name}',{temperature},{temperature_feels_like},'{weather_main}','{weather_description}',{temperature_min},{temperature_max},{pressure},{humidity},{wind_speed},'{date_obj}','{country}','{sunrise_datetime_obj}','{sunset_datetime_obj}');")
     return query
