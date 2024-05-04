@@ -1,4 +1,4 @@
-1. Use Windows task scheduler to schedule daily run of app
+1. Done - Use Windows task scheduler to schedule daily run of app
    YouTube - How to Run a Python Script with the Windows Task Scheduler - Run Scheduled Python Scripts
    https://www.youtube.com/watch?v=4n2fC97MNac
 
@@ -7,6 +7,10 @@
 3. No duplicate results in the database,
    check if a record is already present for a city for the current date,
    if present 'Do Not insert' duplicate weather data of that city for that date
+
+   use chatgpt api to fetch recommendation for current day and weather
+
+   transform and save to master_data_cleaned table where 1 city has 1 record for 1 day
 
 4. Send email to User after Job is completed and New data is inserted for the day
 

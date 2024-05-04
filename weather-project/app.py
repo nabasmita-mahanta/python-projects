@@ -1,6 +1,9 @@
+
+
 import requests
 import helper
 import mysql.connector as sql
+import datetime
 
 cities = ['Delhi', 'Bangalore', 'Mumbai', 'Kolkata', 'Chennai', 'Guwahati', 'Hyderabad', 'Pune', 'Jaipur']
 api_key = '3f9539b62b62177d2d723e8b117b9f2e'
@@ -23,4 +26,8 @@ for city in cities:
     print(f"Data for {city} inserted successfully")
     connection.commit()
 
-
+# Automatically run in Windows task scheduler and write to a log file
+file = open(r'C:\NABAS_WORKSPACE\python-projects\weather-project\log.txt', 'a')
+print("Running python Script now ... ")
+file.write(f'{datetime.datetime.now()} - The script ran \n')
+print("Ran successfully ... ")
